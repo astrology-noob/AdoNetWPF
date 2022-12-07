@@ -1,0 +1,35 @@
+﻿<Window x:Class="AdoNetWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdoNetWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="1,0,-1,0">
+        <DataGrid Name="dataGrid" Initialized="dataGrid_Initialized" Height="243" Width="800" VerticalAlignment="Top" CellEditEnding="dataGrid_CellEditEnding" >
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="Выбрать" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Name="addButton" Content="Добавить нового сотрудника" HorizontalAlignment="Center" Margin="0,312,0,0" VerticalAlignment="Top" Click="addButton_Click" Height="31" Width="170"/>
+        <Button Name="deleteButton" Content="Удалить выбранные строки" HorizontalAlignment="Left" Margin="10,248,0,0" VerticalAlignment="Top" Click="deleteButton_Click"/>
+        <TextBox Name="FirstNameTB" HorizontalAlignment="Left" Margin="132,283,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="78"/>
+        <TextBox Name="SecondNameTB" HorizontalAlignment="Left" Margin="235,283,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Width="70"/>
+        <TextBox Name="MiddleNameTB" HorizontalAlignment="Left" Margin="330,283,0,0" TextWrapping="Wrap" Text="Middle Name" VerticalAlignment="Top" Width="85"/>
+        <TextBox Name="PhoneTB" HorizontalAlignment="Left" Margin="447,283,0,0" TextWrapping="Wrap" Text="+7(999)999-00-00" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="EmailTB" HorizontalAlignment="Left" Margin="592,283,0,0" TextWrapping="Wrap" Text="@.i" VerticalAlignment="Top" Width="59"/>
+        <TextBox Name="IDTB" HorizontalAlignment="Left" Margin="64,284,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="48"/>
+        <TextBox Name="WageTB" HorizontalAlignment="Left" Margin="676,283,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="59"/>
+        <TextBlock HorizontalAlignment="Left" Margin="30,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Статистика"/></TextBlock>
+        <Label Content="Кол-во сотрудников" HorizontalAlignment="Left" Margin="27,371,0,0" VerticalAlignment="Top" Height="26"/>
+        <TextBlock Name="empCount" HorizontalAlignment="Left" Margin="154,377,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="0"/></TextBlock>
+        <Label Content="Минимальная зп" HorizontalAlignment="Left" Margin="182,371,0,0" VerticalAlignment="Top" Height="26"/>
+        <TextBlock Name="minWage" HorizontalAlignment="Left" Margin="289,377,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="0"/></TextBlock>
+        <Label Content="Максимальная зп" HorizontalAlignment="Left" Margin="318,371,0,0" VerticalAlignment="Top" Height="26"/>
+        <TextBlock Name="maxWage" HorizontalAlignment="Left" Margin="429,377,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="0"/></TextBlock>
+        <Label Content="Средняя зп" HorizontalAlignment="Left" Margin="467,371,0,0" VerticalAlignment="Top" Height="26"/>
+        <TextBlock x:Name="avgWage" HorizontalAlignment="Left" Margin="548,377,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="0"/></TextBlock>
+    </Grid>
+</Window>
